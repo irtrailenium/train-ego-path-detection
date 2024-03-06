@@ -1,0 +1,28 @@
+# backbone configuration
+pretrained: True  # whether to use pretrained weights for the backbone
+input_shape: [3, 512, 512]  # input size of the model (channels, height, width)
+
+# training configuration
+optimizer: adam  # optimizer name (only "adam" is supported)
+scheduler: one_cycle  # scheduler name (only "one_cycle" is supported, "null" for no scheduler)
+train_prop: 0.8  # proportion of the dataset to use for training
+val_prop: 0.1  # proportion of the dataset to use for validation
+test_prop: 0.1  # proportion of the dataset to use for testing
+workers: 8  # number of workers for the dataloader
+seed: 42  # random seed for reproducibility
+val_iterations: 5  # number of epochs of the validation set to validate the model
+test_iterations: 10  # number of epochs of the test set to test the model
+
+# dataset augmentation configuration
+brightness: 0.5  # brightness factor
+contrast: 0.5  # contrast factor
+saturation: 0.5  # saturation factor
+hue: 0.2  # hue factor
+crop_margin_sides: 0.1  # crop margin for the left-right crop augmentation (red rectangle in paper fig. 4)
+crop_margin_top: 0.1  # crop margin for the top crop augmentation (red rectangle in paper fig. 4)
+std_dev_factor_sides: 0.3  # standard deviation factor for the left-right crop augmentation
+std_dev_factor_top: 0.1  # standard deviation factor for the top crop augmentation
+
+# paths configuration
+images_path: "/home/tlaurent/Datasets/rs19_val/jpgs/rs19_val"  # path to the images directory
+annotations_path: "/home/tlaurent/Datasets/rs19_egopath/rs19_egopath.json"  # path to the annotations file

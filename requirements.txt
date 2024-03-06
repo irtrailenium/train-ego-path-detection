@@ -1,0 +1,18 @@
+# requirements for basic usage
+numpy
+Pillow
+PyYAML
+torch
+torchvision
+
+# requirements for training
+wandb
+
+# requirements for video inference
+opencv-python
+
+# requirements for TensorRT usage
+onnx
+onnxruntime
+pycuda
+tensorrt

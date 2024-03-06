@@ -1,0 +1,11 @@
+# training configuration
+epochs: 400  # number of epochs to train the model
+batch_size: 8  # batch size for the dataloader
+learning_rate: 0.0001  # learning rate for the optimizer
+ylimit_loss_weight: 0.5  # weight coefficient for the loss function (see paper eq. 3)
+perspective_weight_limit_percentile: 95  # percentile for the calculation of the perspective weight limit (Wmax in paper eq. 1.2) (null for no perspective weight limit)
+
+# model configuration
+anchors: 64  # number of horizontal anchors in the input image
+pool_channels: 8  # number of output channels of the pooling layer
+fc_hidden_size: 2048  # number of units in the hidden layer of the fully connected part
