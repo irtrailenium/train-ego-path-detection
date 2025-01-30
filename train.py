@@ -146,6 +146,10 @@ def main(args):
         ).to(device)
     else:
         raise ValueError
+    try:
+        model = torch.compile(model)
+    except Exception as e:
+        print(f"torch.compile failed: {e}. Running model without compilation.")
 
     wandb.init(
         project="train-ego-path-detection",
